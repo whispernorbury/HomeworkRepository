@@ -1,0 +1,468 @@
+/*GLOBAL CSS FRAME*/
+body {
+    background-color: rgb(119, 119, 119);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+}
+h1 {
+    margin-bottom:3%;
+    color:black;
+}
+.logo h1 {
+    animation-name: comeFromRight;
+    animation-duration:2s;
+}
+.main1 h2 {
+    animation-duration:2s;
+    animation-name:comeFromRight;
+}
+a {
+    text-decoration-line:none;
+}
+a:visited {
+    color:black;
+}
+a:hover {
+    color:rgb(159, 0, 0);
+    font-weight:bold;
+}
+/*ANIMATION*/
+@keyframes comeFromRight {
+    from {
+        margin-left:100%;
+        width:300%;
+    }
+    to {
+        margin-left:0%;
+        width:100%;
+    }
+}
+/*SIZE OPTIONAL*/
+@media screen and (max-width:480px) { /* small size */
+    h1 {
+        margin-top:5px;
+        font-size:130%;
+    }
+    .realbook {
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        text-align:center;
+        margin:5px;
+        border-style:solid;
+        border-color:black;
+        border-width:1px;
+    }
+    .realbook .bname {
+        margin-top:30%;
+        margin-bottom:30%;
+        font-size:70%;
+        width:100%;
+        position:absolute;
+        opacity:0;
+        color:white;
+        transition:0.5s;
+    }
+    .realbook:hover .bname{
+        opacity:75;
+
+    }
+    .flexkey h3 {
+        font-size:100%;
+        margin-top:2%;
+        margin-bottom:0;
+    }
+    .flexkey {
+        text-align:center;
+        display:flex;
+        flex-direction:column;
+        background-color: rgb(154, 154, 154);
+        border-radius:5px;
+        margin:15px;
+    }
+    .flexcon img {
+        width:50px;
+        border-radius:1%;
+        transition:2s;
+    }
+    .realbook:hover img{
+        filter: brightness(20%);
+        transition-property:transform;
+        transform:scale(1.1);
+    }
+    .flexcon {
+        flex-wrap:wrap;
+        display:flex;
+        padding: 1px;
+        margin:5px;
+    }
+    .logo {
+        font-size:20px;
+        font-family:Courier New, monospace;
+        text-align:center;
+        padding-bottom:5px;
+        border-bottom-style:solid;
+        border-color: rgb(52, 52, 52);
+        border-bottom-width: 2px;
+        margin-left:15px;
+        margin-right:15px;
+    }
+    h2 {
+        font-size:100%;
+        text-align: center;
+        margin-top:5px;
+        margin-bottom:1px;
+    }
+    .logo h1 a {
+        border-top-style:none;
+    }
+    .logo a {
+        border-top-style:solid;
+        border-top-color:black;
+        border-top-width:1px;
+        margin-top:2px;
+    }
+    .logo2 {
+        margin-left:auto;
+        margin-right:auto;
+        align-content:center;
+    }
+    .navisign {
+        display:flex;
+        flex-direction:column;
+        flex-wrap:nowrap;
+        justify-content:flex;
+    }
+    .bar {
+        display:none;
+        border-left:1px;
+        border-right:1px;
+        border-style:solid;
+        border-color:black;
+        margin-left:20px;
+        margin-right:20px;
+        margin-top:10px;
+        margin-bottom:10px;
+        width:0;
+    }
+    .webdetail .bar {
+        border-color:rgb(165, 165, 165);
+    }
+    .webdetail {
+        font-size:10px;
+        background-color:rgb(53, 53, 53);
+        color:rgb(165, 165, 165);
+    }
+    .webdec {
+        margin-left:3%;
+        margin-right:3%
+    }
+    .webdecontent {
+        display:grid;
+        grid-template-rows:1fr, 1fr, 1fr;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .main1 {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin:15px;
+        margin-left:auto;
+        margin-right:auto;
+        border-top-color:brown;
+        border-bottom-color:brown;
+        border-top-style:solid;
+        border-bottom-style:solid;
+        border-top-width:3px;
+        border-bottom-width:3px;
+        padding-bottom:10px;
+    }
+}
+@media screen and (min-width:481px) and (max-width:800px) { /* medium size */
+    h1 {
+        margin-top:5px;
+        font-size:200%;
+    }
+    .realbook {
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        text-align:center;
+        margin:5px;
+        border-style:solid;
+        border-color:black;
+        border-width:1px;
+    }
+    .realbook .bname {
+        margin-top:30%;
+        margin-bottom:30%;
+        font-size:90%;
+        width:100%;
+        position:absolute;
+        opacity:0;
+        color:white;
+        transition:1s;
+    }
+    .realbook:hover .bname{
+        opacity:75;
+        transform:scale(1.2);
+    }
+    .flexkey h3 {
+        font-size:100%;
+        margin-top:2%;
+        margin-bottom:0;
+    }
+    .flexkey {
+        text-align:center;
+        display:flex;
+        flex-direction:column;
+        background-color: rgb(154, 154, 154);
+        border-radius:5px;
+        margin:15px;
+    }
+    .flexcon img {
+        width:100px;
+        border-radius:1%;
+        transition:2s;
+    }
+    .realbook:hover img{
+        filter: brightness(20%);
+        transition-property:transform;
+        transform:scale(1.2);
+    }
+    .flexcon {
+        flex-wrap:wrap;
+        display:flex;
+        padding: 1px;
+        margin:5px;
+    }
+    .logo {
+        font-size:20px;
+        font-family:Courier New, monospace;
+        text-align:center;
+        padding-bottom:5px;
+        border-bottom-style:solid;
+        border-color: rgb(52, 52, 52);
+        border-bottom-width: 2px;
+        margin-left:15px;
+        margin-right:15px;
+    }
+    h2 {
+        font-size:120%;
+        text-align: center;
+        margin-top:5px;
+        margin-bottom:1px;
+    }
+    .logo2 {
+        margin-left:auto;
+        margin-right:auto;
+        align-content:center;
+    }
+    .navisign {
+        display:flex;
+        flex-direction:flex;
+        flex-wrap:nowrap;
+        justify-content:end;
+    }
+    .bar {
+        border-left:1px;
+        border-right:1px;
+        border-style:solid;
+        border-color:black;
+        margin-left:20px;
+        margin-right:20px;
+        width:0;
+    }
+    .webdetail .bar {
+        border-color:rgb(165, 165, 165);
+        display:none;
+    }
+    .webdetail {
+        font-size:10px;
+        background-color:rgb(53, 53, 53);
+        color:rgb(165, 165, 165);
+    }
+    .webdec {
+        margin-left:3%;
+        margin-right:3%
+    }
+    .webdecontent {
+        display:grid;
+        grid-template-rows:1fr, 1fr, 1fr;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .main1 {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin:15px;
+        margin-left:auto;
+        margin-right:auto;
+        border-top-color:brown;
+        border-bottom-color:brown;
+        border-top-style:solid;
+        border-bottom-style:solid;
+        border-top-width:3px;
+        border-bottom-width:3px;
+        padding-bottom:10px;
+    }
+}
+@media screen and (min-width:801px) { /* big size */
+    h1 {
+        font-size:300%;
+    }
+    .realbook {
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        text-align:center;
+        margin:10px;
+    }
+    .realbook .bname {
+        margin-top:30%;
+        margin-bottom:30%;
+        font-size:150%;
+        width:100%;
+        position:absolute;
+        opacity:0;
+        color:white;
+        transition:2s;
+    }
+    .realbook:hover .bname{
+        opacity:75;
+        transform:scale(1.2);
+    }
+    .flexkey h3 {
+        font-size:200%;
+        margin-top:0;
+        margin-bottom:0;
+    }
+    .flexkey {
+        text-align:center;
+        display:inline-flex;
+        flex-direction:column;
+        background-color: rgb(154, 154, 154);
+        border-radius:5px;
+        padding: 10px;
+        margin:5px;
+    }
+    .flexcon img {
+        width:150px;
+        border-radius:10px;
+    }
+    .realbook:hover img{
+        transform: scale(1.25);
+        filter: brightness(20%);
+        transition-property:transform;
+        transition-duration:2s;
+    }
+    .flexcon {
+        flex-wrap:wrap;
+        display:flex;
+        padding: 10px;
+        margin:5px;
+    }
+    .logo {
+        font-size:35px;
+        font-family:Courier New, monospace;
+        text-align:center;
+        padding-bottom:30px;
+        border-bottom-style:solid;
+        border-color: rgb(52, 52, 52);
+        border-bottom-width: 2px;
+        margin-left:15px;
+        margin-right:15px;
+    }
+    .logo2 {
+        margin-left:auto;
+        margin-right:auto;
+        max-width:1020px;
+    }
+    .navisign {
+        margin-right:30px;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        justify-content:flex-end;
+    }
+    .bar {
+        border-left:1px;
+        border-right:1px;
+        border-style:solid;
+        border-color:black;
+        margin-left:20px;
+        margin-right:20px;
+        margin-top:10px;
+        margin-bottom:10px;
+        width:0;
+    }
+    .webdetail .bar {
+        border-color:rgb(165, 165, 165);
+    }
+    .webdec {
+        margin-left:3%;
+        margin-right:3%
+    }
+    .webdetail {
+        font-size:15px;
+        background-color:rgb(53, 53, 53);
+        color:rgb(165, 165, 165);
+    }
+    .webdecontent {
+        display:grid;
+        grid-template-columns:1fr 20px 1fr;
+        max-width:1020px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .main1 {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin:15px;
+        margin-left:auto;
+        margin-right:auto;
+        border-top-color:brown;
+        border-bottom-color:brown;
+        border-top-style:solid;
+        border-bottom-style:solid;
+        border-top-width:3px;
+        border-bottom-width:3px;
+        padding-bottom:10px;
+        max-width:1020px;
+    }
+}
+.mainlogo {
+    text-align:center;
+}
+.boxbox {
+    min-width:100px;
+    text-align:center;
+    background-color:rgb(179, 179, 179);
+    width:30%;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:15px;
+}
+.eachbox {
+    padding:10px;
+}
+.highbox {
+    text-align: center;
+    padding:10px;
+}
+.bod {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+.bod .eachbox {
+    padding:0;
+}
+.bod input[type=text], input[type=number] {
+    width:75%;
+}
+.gotoSignup input[type=submit] {
+    margin:10px;
+}
+.IdPw input[type=text], input[type=password] {
+    width:70%;
+}
+.boxbox .eachbox input[type=text], input[type=email], input[type=tel] {
+    width:70%;
+}
