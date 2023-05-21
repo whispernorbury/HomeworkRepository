@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>NORBURY</title>
+        <link rel="shortcut icon" type="image/jpg" href="imgs/favicon.ico">
+        <meta name="keywords" content="shop, music, jazz, realbook, whispernorbury, mall">
+        <meta name="description" content="This is website for buy realbook.">
+        <link type="text/css" rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <a href="#">
+            <div class="float"><span>TOP</span></div>
+        </a>
+        <header>
+            <div class="logo">
+                <div class="logo2">
+                    <img src="imgs/heart.png" class="heart">
+                    <h1><a href="index.html">Norbury</a></h1>
+                    <div class="greeting" id="tt">
+                        <span style="color:rgb(16, 56, 91)" id="welcomeMsg"></span>
+                        <script>
+                            let timeH = new Date().getHours();
+                            let wm = document.getElementById("welcomeMsg");
+                            if (timeH >= 6 && timeH < 10) {
+                                wm.innerText = "Good Morning, sir.";
+                            } else if (timeH >= 10 && timeH < 16) {
+                                wm.innerText = "Good afternoon!";
+                            } else if (timeH >= 16 && timeH < 20) {
+                                wm.innerText = "Good evening.";
+                            } else {
+                                wm.innerText = "Good night. How was your day?"
+                            }
+                        </script>
+                    </div>
+                    <div class="navisign">
+                        <div><a href="login.html">Log in</a></div>
+                        <div class="bar"></div>
+                        <div><a href="signup.html">Sign up</a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <aside>
+            <form>
+                <div class="piano1">
+                    <div class="blacklabel">
+                        <input type="radio" name="keys" id="All" checked><label for="All">All</label>
+                        <input type="radio" name="keys" id="Db"><label for="Db">Db</label>
+                        <input type="radio" name="keys" id="Eb"><label for="Eb">Eb</label>
+                        <input type="radio" name="keys" id="Gb"><label for="Gb">Gb</label>
+                        <input type="radio" name="keys" id="Ab"><label for="Ab">Ab</label>
+                        <input type="radio" name="keys" id="Bb"><label for="Bb">Bb</label>
+                    </div>
+                    <div class="whitelabel">
+                        <input type="radio" name="keys" id="C"><label for="C">C</label>
+                        <input type="radio" name="keys" id="D"><label for="D">D</label>
+                        <input type="radio" name="keys" id="E"><label for="E">E</label>
+                        <input type="radio" name="keys" id="F"><label for="F">F</label>
+                        <input type="radio" name="keys" id="G"><label for="G">G</label>
+                        <input type="radio" name="keys" id="A"><label for="A">A</label>
+                        <input type="radio" name="keys" id="B"><label for="B">B</label>
+                    </div>
+                </div>
+                <div class="sortion">
+                    sorted by
+                    <input type="radio" id="lowP" name="sort" checked><label for="lowP">low price</label>
+                    <input type="radio" id="highP" name="sort"><label for="highP">high price</label>
+                </div>
+                <div class="searchBar">
+                    <input type="text" id="searchTerm" placeholder="Search title Only...">
+                    <button>Search</button>
+                </div>
+            </form>
+        </aside>
+        <main></main>
+        <footer>
+            <div class="webdetail" id="plusalpha">
+                <div class="webdecontent">
+                    <div class="webdec">
+                        <br>
+                        Copyright 2023. JeongSunwoo all rights reserved.<br>
+                        This website was constructed to Yonsei Univ. Internet Programming &lt;CSI 2109-01&gt; Lab3.<br>
+                        If you want to use HTML/CSS/JS source codes, please send an e-mail to steve7161@yonsei.ac.kr.<br>
+                        <br>
+                    </div>
+                    <div class="bar"></div>
+                    <div class="webdec">
+                        <br>
+                        Thank you for visit.<br>
+                        Different with lab3, the background color chaged to gradient red-blue.<br>
+                        Link to main page is combined with Main title &lt;Norbury&gt;, same to lab3 but one heart icon added.<br>
+                        12keys in music were used in category filtering.<br>
+                        You can see the price and composer about the realbook sheet written by students of Berklee College of Music.<br>
+                        The components were built with checkbox-label.<br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            fetch("product.json")
+            .then(response => {
+                if (!response.ok) {throw new Error(`HTTP error: ${response.status}`);}
+                return response.json();
+            })
+            .then(json => initialize(json))
+            .catch(error => console.error(`Fetch problem: ${error.message}`));
+            function initialize(items) {
+                // define Variables
+                const main = document.querySelector("main");
+                const searchTerm = document.querySelector("#searchTerm");
+                const searchBtn = document.querySelector("button");
+                let key = document.querySelector("input[name=keys]:checked");
+                let sort = document.querySelector("input[name=sort]:checked");
+                let lastKey, lastSearch, lastSortion, keyGroup, finalGroup;
+                // setup
+                lastKey = key.id;
+                lastSearch = "";
+                lastSortion = sort.id;
+                keyGroup = [];
+                finalGroup = items;
+                if (document.querySelector("input[name=sort]:checked").id == "lowP") {
+                            finalGroup.sort(function(a, b) {return a.price - b.price;});
+                        }
+                else {finalGroup.sort(function(a, b) {return b.price - a.price;});}
+                update1();
+                searchBtn.addEventListener("click", getItems);
+                window.onscroll = function(e) {
+                    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - document.querySelector("footer").offsetHeight) {
+                        let eleCnt = main.childElementCount;
+                        let eleNew = finalGroup.slice(eleCnt);
+                        for (const i in eleNew) {
+                            if (i < 6) {buildBook(eleNew[i]);}
+                            else break;
+                        }
+                    }
+                }
+                // fine functions
+                function getItems(e) {
+                    e.preventDefault();
+                    keyGroup=[];
+                    finalGroup=[];
+                    key = document.querySelector("input[name=keys]:checked");
+                    sort = document.querySelector("input[name=sort]:checked");
+                    if (key.id === lastKey && searchTerm.value.trim() === lastSearch && sort.id === lastSortion) {return;}
+                    lastKey = key.id;
+                    lastSearch = searchTerm.value.trim();
+                    lastSortion = sort.id;
+                    // 1st filter, key
+                    if (key.id === "All") {keyGroup = items;}
+                    else {
+                        const lowerCaseKey = key.id.toLowerCase();
+                        keyGroup = items.filter(obj => obj.key.toLowerCase() === lowerCaseKey);
+                    }
+                    // 2nd filter, seartchTerm
+                    if (searchTerm.value.trim() === "") {finalGroup = keyGroup;}
+                    else {
+                        const lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+                        finalGroup = keyGroup.filter(obj => obj.title.toLowerCase().includes(lowerCaseSearchTerm));
+                    }
+                    // sortion
+                    if (document.querySelector("input[name=sort]:checked").id == "lowP") {
+                            finalGroup.sort(function(a, b) {return a.price - b.price;});
+                        }
+                    else {finalGroup.sort(function(a, b) {return b.price - a.price;});}
+                    update1();
+                }
+                function update1() {
+                    while (main.hasChildNodes()) {main.removeChild(main.firstChild);} // erase data
+                    if (finalGroup.length === 0) { // if no data exist
+                        const par = document.createElement("p");
+                        par.textContent = "Sorry, we don't have any results for your search.";
+                        main.appendChild(par);
+                    }
+                    else { //print
+                        for (const i in finalGroup) {
+                            if (i < 6) {buildBook(finalGroup[i]);}
+                            else break;
+                        }
+                    }
+                }
+                function buildBook(item) {
+                    // build
+                    const clickBox = document.createElement("label");
+                    clickBox.setAttribute("class", "clickbox");
+                    const btnInvisible = document.createElement("input");
+                    btnInvisible.setAttribute("type", "checkbox");
+                    const bookContainer = document.createElement("div");
+                    bookContainer.setAttribute("class", "realbook");
+                    const image = document.createElement("img");
+                    image.src = "imgs/" + item.image;
+                    image.alt = item.title + "sheet in " + item.key + " Key.";
+                    const bookinfo = document.createElement("div");
+                    bookinfo.setAttribute("class", "bname");
+                    bookinfo.innerText = item.title + "\nby " + item.composer + "\n\nfor $ " + item.price;
+                    // post elements
+                    main.appendChild(clickBox);
+                    clickBox.appendChild(btnInvisible);
+                    clickBox.appendChild(bookContainer);
+                    bookContainer.appendChild(image);
+                    bookContainer.appendChild(bookinfo);
+                }
+            }
+        </script>
+    </body>
+</html>

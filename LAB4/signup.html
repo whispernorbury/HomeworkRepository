@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Norbury Sign Up </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div class="mainlogo">
+            <h1><a href="index.html">Norbury</a></h1>
+        </div>
+        <div class="highbox">
+            <strong>Already have account?</strong> <a style="text-decoration-line:underline; color:blue;" href="login.html"><strong>Sign in</strong></a>
+        </div>
+        <div class="boxbox">
+            <form method="post">
+                <div class="eachbox">
+                    ID &nbsp; :<input type="text" placeholder="(required)" autocomplete="on" autofocus required>
+                </div>
+                <div class="eachbox">
+                    PW &nbsp; :<input type="password" placeholder="(required)" required>
+                </div>
+                <div class="eachbox">
+                    PW &nbsp; :<input type="password" placeholder="certification of password (required)" required>
+                </div>
+                <div class="eachbox">
+                    Name :<input type="text" name="name" placeholder="(required)" autocomplete="on" required>
+                </div>
+                <div class="eachbox">
+                    Email:<input type="email" name="email" placeholder="student@yonsei.ac.kr (requried)" autocomplete="on" required>
+                </div>
+                <div>
+                    <input type="radio" id="emailyes" name="toemail">
+                    <label for="emailyes">send</label>
+                    <input type="radio" id="emailno" name="toemail">
+                    <label for="emailno">don't send</label>
+                </div><br>
+                BOD: (required)<br>
+                <div class="bod">    
+                    <div class="eachbox">
+                        <input type="text" placeholder="Year" maxlength="4" autocomplete="on" required>
+                    </div>
+                    <div class="eachbox">
+                        <input type="text" placeholder="month" autocomplete="on" list="mlist" required>
+                        <datalist id="mlist">
+                            <option value="January"></option>
+                            <option value="February"></option>
+                            <option value="March"></option>
+                            <option value="April"></option>
+                            <option value="May"></option>
+                            <option value="June"></option>
+                            <option value="July"></option>
+                            <option value="August"></option>
+                            <option value="September"></option>
+                            <option value="October"></option>
+                            <option value="November"></option>
+                            <option value="December"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <input type="number" placeholder="day" min="1" max="31" step="1" autocomplete="on" required>
+                    </div>
+                </div>
+                <div class="eachbox">
+                    TEL :<input type="tel" placeholder="010-1234-5678 (not requried)" pattern="\d{3}-\d{4}-\d{4}" autocomplete="on">
+                </div>
+                <div>
+                    <input type="checkbox">Agree to collection of your personal information
+                </div>
+                <div class="gotoSignup">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
