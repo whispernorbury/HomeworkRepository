@@ -1,0 +1,145 @@
+[
+    {
+        "title": "Black Orpheus",
+        "key": "C",
+        "price": 30,
+        "composer": "Luiz Bonfa",
+        "image": "blackOrpheus.png",
+        "genre":"jazz"
+    },
+    {
+        "title": "Blue Bossa",
+        "key": "Eb",
+        "price": 29,
+        "composer": "Joe Henderson",
+        "image": "blueBossa.png",
+        "genre": "bossa"
+    },
+    {
+        "title": "Donna Lee",
+        "key": "Ab",
+        "price": 28,
+        "composer": "Error Garner",
+        "image": "donnaLee.png"
+    },
+    {
+        "title": "Giant Steps",
+        "key": "C",
+        "price": 27,
+        "composer": "Error Garner",
+        "image": "giantSteps.png",
+        "genre": "bebop"
+    },
+    {
+        "title": "Just Friends",
+        "key": "G",
+        "price": 26,
+        "composer": "Error Garner",
+        "image": "justFriends.png"
+    },
+    {
+        "title": "Lazy Bird",
+        "key": "G",
+        "price": 25,
+        "composer": "Error Garner",
+        "image": "lazyBird.png"
+    },
+    {
+        "title": "Misty",
+        "key": "Eb",
+        "price": 24,
+        "composer": "Erroll Garner",
+        "image": "misty.png"
+    },
+    {
+        "title": "Nardis",
+        "key": "G",
+        "price": 21,
+        "composer": "Miles Davis",
+        "image": "nardis.png"
+    },
+    {
+        "title": "The Duke",
+        "key": "C",
+        "price": 22,
+        "composer": "Error Garner",
+        "image": "theDuke.png"
+    },
+    {
+        "title": "There will never be another you",
+        "key": "Eb",
+        "price": 11,
+        "composer": "Harry Warren",
+        "image": "thereWillNeverBeAnotherYou.png"
+    },
+    {
+        "title": "So What",
+        "key": "C",
+        "price": 12,
+        "composer": "Miles Davis",
+        "image": "soWhat.png"
+    },
+    {
+        "title": "Stella By Starlight",
+        "key": "Bb",
+        "price": 10,
+        "composer": "Miles Davis",
+        "image": "stellaByStarlight.png"
+    },
+    {
+        "title": "A Fine Romance",
+        "key": "C",
+        "price": 13,
+        "composer": "Fields",
+        "image": "aFineRomance.jpg"
+    },
+    {
+        "title": "Afternoon In Paris",
+        "key": "C",
+        "price": 14,
+        "composer": "John Lewis",
+        "image": "afternoonInParis.jpg"
+    },
+    {
+        "title": "All Of Me",
+        "key": "C",
+        "price": 15,
+        "composer": "Seymour Simons",
+        "image": "allOfMe.jpg"
+    },
+    {
+        "title": "Boplicity",
+        "key": "G",
+        "price": 1,
+        "composer": "Cleo Henry",
+        "image": "boplicity.jpg"
+    },
+    {
+        "title": "Deluge",
+        "key": "C",
+        "price": 2,
+        "composer": "Wayne Shorter",
+        "image": "deluge.jpg"
+    },
+    {
+        "title": "Lie Awake",
+        "key": "C",
+        "price": 3,
+        "composer": "Mitch Coodley",
+        "image": "lieAwake.jpg"
+    },
+    {
+        "title": "Little Waltz",
+        "key": "Ab",
+        "price": 4,
+        "composer": "Ron Carter",
+        "image": "littleWaltz.jpg"
+    },
+    {
+        "title": "Look To The Sky",
+        "key": "Eb",
+        "price": 5,
+        "composer": "Jobim",
+        "image": "lookToTheSky.jpg"
+    }
+]
